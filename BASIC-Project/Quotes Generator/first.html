@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quotes Generator</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        background: #ffffff;
+        padding: 30px;
+        width: 90%;
+        max-width: 500px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .quote-box {
+        min-height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        color: #555;
+        margin-bottom: 25px;
+        padding: 15px;
+        border-left: 5px solid #667eea;
+        background: #f9f9f9;
+        border-radius: 8px;
+      }
+
+      button {
+        padding: 12px 25px;
+        font-size: 16px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        background: #667eea;
+        color: #fff;
+        transition: background 0.3s ease, transform 0.2s ease;
+      }
+
+      button:hover {
+        background: #5a67d8;
+        transform: scale(1.05);
+      }
+
+      footer {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #888;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Daily Quotes</h1>
+      <div class="quote-box" id="quote">Click the button to see a quote</div>
+      <button>New Quote</button>
+      <footer>Simple Quotes Generator using HTML, CSS & JavaScript</footer>
+    </div>
+    <script src="quotes.js"></script>
+  </body>
+</html>
