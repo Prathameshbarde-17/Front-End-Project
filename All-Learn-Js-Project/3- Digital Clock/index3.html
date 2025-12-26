@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Simple Digital Clock (skeleton)</title>
+    <style>
+      /* Basic reset */
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem;
+        gap: 0.5rem;
+        border-bottom: solid 1px #aaa;
+        background-color: #eee;
+      }
+
+      nav a {
+        display: inline-block;
+        min-width: 9rem;
+        padding: 0.5rem;
+        border-radius: 0.2rem;
+        border: solid 1px rgb(22, 22, 22);
+        text-align: center;
+        text-decoration: none;
+        color: #1b1b1b;
+      }
+
+      nav a[aria-current="page"] {
+        color: #000;
+        background-color: #d4d4d4;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #0f172a 0%, #0b1220 100%);
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, monospace;
+        color: #e6eef8;
+        padding: 24px;
+      }
+
+      .clock {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 28px 36px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.04);
+        box-shadow: 0 6px 24px rgba(2, 6, 23, 0.6),
+          inset 0 1px 0 rgba(255, 255, 255, 0.03);
+      }
+
+      .digits {
+        font-size: 5rem;
+        line-height: 1;
+        letter-spacing: 0.02em;
+      }
+
+      /* smaller on narrow screens */
+      @media (max-width: 420px) {
+        .digits {
+          font-size: 3.2rem;
+        }
+        .clock {
+          padding: 20px;
+        }
+      }
+
+      .sep {
+        font-size: 5rem;
+        line-height: 1;
+        display: inline-block;
+        animation: blink 1s steps(1, start) infinite;
+        opacity: 1;
+        transform: translateY(-2px);
+      }
+
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+
+      /* Subtle label for clarity (optional) */
+      .label {
+        display: block;
+        font-size: 0.8rem;
+        opacity: 0.7;
+        text-align: center;
+        margin-top: 8px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+      }
+
+      /* Small helper: each time-part container */
+      .part {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="/" aria-current="page">Home</a>
+      <a href="https://poki.com/" target="_blank" rel="noopener noreferrer">
+        Games
+      </a>
+    </nav>
+    <main>
+      <div
+        class="clock"
+        role="timer"
+        aria-live="polite"
+        aria-label="Digital clock"
+      >
+        <div class="part">
+          <span id="hours" class="digits">--</span>
+          <span class="label">HRS</span>
+        </div>
+
+        <span class="sep" aria-hidden="true">:</span>
+
+        <div class="part">
+          <span id="minutes" class="digits">--</span>
+          <span class="label">MIN</span>
+        </div>
+
+        <span class="sep" aria-hidden="true">:</span>
+
+        <div class="part">
+          <span id="seconds" class="digits">--</span>
+          <span class="label">SEC</span>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="javas.js"></script>
+</html>
